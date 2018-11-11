@@ -1,24 +1,16 @@
-# README
+# Reimbursements App API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project contains the API for an experimental reimbursements app for Paystack. The app introduces a better process for requesting, reimbursing and approving expenses for Paystack staff. 
 
-Things you may want to cover:
+## Getting started
+- Clone the repo
+- cd into the project directory
+- Run `bundle install`
+- Run `rails server`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Stack
+This project runs on:
+- Ruby 2.4.2
+- Rails 5.2.1
+- Postgres as the production DB
+- SQLite3 as the development DB
