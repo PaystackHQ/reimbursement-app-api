@@ -37,6 +37,7 @@ class Api::V1::RequestsController < ApplicationController
 
   def destroy
     @request.destroy
+    head :no_content
   end
 
   private
@@ -54,6 +55,6 @@ class Api::V1::RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:description, :amount, :status)
+    params.permit(:description, :amount, :status)
   end
 end
