@@ -1,9 +1,15 @@
 class ApplicationController < ActionController::API
-  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  rescue_from ActiveRecord::RecordNotFound do |e|
+    json_response({ message: e.message }, :not_found)
+  end
+
+  rescue_from ActiveRecord::RecordInvalid do |e|
+    json_response({ message: e.message }, :unprocessable_entity)
+  end
 
   private
 
-  def record_not_found
-    render json: { status: 404, message: 'Record not found' }, status: :not_found
+  def json_response(object, status = :ok)
+    render json: object, status: status
   end
 end
