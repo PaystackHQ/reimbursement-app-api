@@ -55,6 +55,6 @@ class Api::V1::RequestsController < ApplicationController
   end
 
   def request_params
-    params.permit(:description, :amount, :status)
+    params.permit(:description, :amount)
   end
 end

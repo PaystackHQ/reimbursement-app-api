@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_11_171907) do
+ActiveRecord::Schema.define(version: 2018_11_13_235635) do
 
   create_table "requests", force: :cascade do |t|
     t.decimal "amount"
     t.text "description"
-    t.string "status"
+    t.string "status", default: "pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
