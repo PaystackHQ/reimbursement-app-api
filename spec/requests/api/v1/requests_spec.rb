@@ -63,13 +63,13 @@ RSpec.describe 'Requests API', type: :request do
   end
 
   describe 'PUT /api/v1/requests/:id' do
-    let(:valid_attributes) { { status: 'approved' } }
+    let(:valid_attributes) { { description: 'test' } }
 
     context 'when the record exists' do
       before { put "/api/v1/requests/#{request_id}", params: valid_attributes }
 
       it 'updates the record' do
-        expect(json['status']).to eq('approved')
+        expect(json['description']).to eq('test')
       end
 
       it 'returns status code 200' do
