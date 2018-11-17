@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       devise_for :users
       resources :requests
+      post '/sign_in', to: 'sessions#create'
       post '/requests/:id/approve', to: 'requests#approve'
       post '/requests/:id/reject', to: 'requests#reject'
       post '/requests/:id/mark_as_paid', to: 'requests#mark_as_paid'

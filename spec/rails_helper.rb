@@ -76,6 +76,8 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.include Devise::Test::IntegrationHelpers
 end
 
 # configure shoulda matchers to use rspec as the test framework and full matcher libraries for rails

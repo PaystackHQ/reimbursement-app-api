@@ -17,7 +17,6 @@ RSpec.describe User, type: :model do
     it 'generates another token when one already has been taken' do
       user.generate_authentication_token!
       expect(user.authentication_token).not_to eql existing_user.authentication_token
-      puts user.authentication_token
     end
   end
 end
