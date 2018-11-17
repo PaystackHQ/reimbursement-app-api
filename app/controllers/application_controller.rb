@@ -7,6 +7,14 @@ class ApplicationController < ActionController::API
     json_response({ message: e.message }, :unprocessable_entity)
   end
 
+  def current_user
+    @current_user ||= User.find_by(authentication_token: request.headers['Authorization'])
+  end
+
+  def authenticate_user_with_token!
+    json_response({ message: 'Invalid token provided' }, :unauthorized) unless current_user.present?
+  end
+
   private
 
   def json_response(object, status = :ok)
