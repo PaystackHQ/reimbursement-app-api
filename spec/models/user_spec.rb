@@ -11,12 +11,12 @@ RSpec.describe User, type: :model do
     it 'generates a unique token' do
       allow(Devise).to receive(:friendly_token).and_return('auniquetoken123')
       user.generate_authentication_token!
-      expect(user.authentication_token).to eql('auniquetoken123')
+      expect(user.authentication_token).to eq('auniquetoken123')
     end
 
     it 'generates another token when one already has been taken' do
       user.generate_authentication_token!
-      expect(user.authentication_token).not_to eql existing_user.authentication_token
+      expect(user.authentication_token).not_to eq(existing_user.authentication_token)
     end
   end
 end

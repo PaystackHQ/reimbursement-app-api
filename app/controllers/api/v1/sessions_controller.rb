@@ -14,4 +14,11 @@ class Api::V1::SessionsController < ApplicationController
       render json: { message: 'Invalid email or password' }, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @user = User.find_by(authentication_token: params[:authentication_token])
+    @user.generate_authentication_token!
+    @user.save
+    head :no_content
+  end
 end
