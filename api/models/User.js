@@ -44,11 +44,6 @@ module.exports = {
       required: false
     },
 
-    paid_at: {
-      type: 'date',
-      required: false
-    },
-
     requests: {
       collection: 'Request',
       via: 'user_id'
