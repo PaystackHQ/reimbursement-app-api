@@ -12,7 +12,8 @@
  * For more information on configuring datastores, check out:
  * https://sailsjs.com/config/datastores
  */
-
+require('dotenv').config();
+const mysql_connection = process.env.MYSQL_DB_URL;
 module.exports.datastores = {
 
 
@@ -48,8 +49,8 @@ module.exports.datastores = {
     *    (See https://sailsjs.com/config/datastores for help.)                 *
     *                                                                          *
     ***************************************************************************/
-    // adapter: 'sails-mysql',
-    // url: 'mysql://user:password@host:port/database',
+    adapter: 'sails-mysql',
+    url: mysql_connection,
 
   },
 
