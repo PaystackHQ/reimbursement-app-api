@@ -36,7 +36,8 @@ module.exports = {
       required: false
     },
     paid_at: {
-      type: 'date',
+      type: 'string',
+      columnType: 'date',
       required: false
     },
 

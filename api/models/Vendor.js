@@ -43,8 +43,7 @@ module.exports = {
     },
 
     beneficiary_id: {
-      type: 'Beneficiary',
-      columnType: 'text',
+      model: 'Beneficiary',
       required: true
     },
 
