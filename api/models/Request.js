@@ -31,7 +31,8 @@ module.exports = {
     },
 
     reviewed_at: {
-      type: 'date',
+      type: 'string',
+      columnType: 'date',
       required: false
     },
     paid_at: {
