@@ -20,14 +20,14 @@ module.exports = {
       required: true
     },
     status: {
-      type: 'string', // purpose of this staff whether its to update or complete,
+      type: 'string', // status of request at any point in time
       isIn: ['pending', 'paid', 'approved', 'rejected'],
       required: true
     },
 
     comments: {
-      model: 'Comment',
-      required: false
+      collection: 'Comment',
+      via: 'request_id'
     },
 
     reviewed_at: {
@@ -38,14 +38,17 @@ module.exports = {
       type: 'date',
       required: false
     },
+
     user_id: {
       model: 'User',
       required: true
     },
+
     beneficiary: {
       model: 'Beneficiary',
       required: true
     },
+
     organization: {
       model: 'Organization',
       required: true
